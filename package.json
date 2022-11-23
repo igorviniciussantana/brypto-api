@@ -1,0 +1,11 @@
+{
+  "name": "products-api",
+  "version": "1.0.0",
+  "description": "api para cadastro de produtos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor e Andre",
+  "license": "ISC"
+}
