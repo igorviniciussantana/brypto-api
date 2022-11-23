@@ -18,6 +18,17 @@ app.post('/', async (req,res)=>{
     res.json(createProduct)
 })
 
+app.get('/:id', async (req,res)=>{
+    const findProduct = await product.findByPk(req.params.id)
+    res.json(findProduct)
+})
+
+app.delete('/:id', async (req,res)=>{
+    const deleteProduct = await product.findByPk(req.params.id)
+    deleteProduct.destroy()
+    res.json('Deleted')
+})
+
 app.listen(PORT, ()=>{
     console.log(`O servidor está rodando na porta ${PORT}`)
 })
