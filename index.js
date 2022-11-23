@@ -14,7 +14,7 @@ app.get('/', async (req,res)=>{
 })
 
 app.post('/', async (req,res)=>{
-    const createProduct = product.create(req.body)
+    const createProduct = await product.create(req.body)
     res.json(createProduct)
 })
 
