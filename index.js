@@ -1,12 +1,19 @@
 const express = require('express')
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
 
 const { product } = require('./models')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    app.use(cors());
+    next();
+  });
 
 app.get('/', async (req,res)=>{
   const returnProducts = await product.findAll();
