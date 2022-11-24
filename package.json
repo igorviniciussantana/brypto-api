@@ -1,10 +1,11 @@
 {
-  "name": "products-api",
+  "name": "brypto-api",
   "version": "1.0.0",
   "description": "api para cadastro de produtos",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Igor e Andre",
   "license": "ISC",
