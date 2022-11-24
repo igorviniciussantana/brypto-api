@@ -15,22 +15,22 @@ app.use((req, res, next) => {
     next();
   });
 
-app.get('/', async (req,res)=>{
+app.get('/products', async (req,res)=>{
   const returnProducts = await product.findAll();
   res.json(returnProducts)
 })
 
-app.post('/', async (req,res)=>{
+app.post('/products', async (req,res)=>{
     const createProduct = await product.create(req.body)
     res.json(createProduct)
 })
 
-app.get('/:id', async (req,res)=>{
+app.get('/products/:id', async (req,res)=>{
     const findProduct = await product.findByPk(req.params.id)
     res.json(findProduct)
 })
 
-app.delete('/:id', async (req,res)=>{
+app.delete('/products/:id', async (req,res)=>{
     const deleteProduct = await product.findByPk(req.params.id)
     deleteProduct.destroy()
     res.json('Deleted')
