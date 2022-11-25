@@ -15,6 +15,10 @@ app.use((req, res, next) => {
     next();
   });
 
+app.get('/', async (req,res)=>{
+ res.json('Página Inicial');
+})
+
 app.get('/products', async (req,res)=>{
   const returnProducts = await product.findAll();
   res.json(returnProducts)
