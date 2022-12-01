@@ -1,6 +1,8 @@
+require('dotenv/config');
 const express = require('express')
 const app = express();
 const cors = require('cors');
+const PORT = process.env.PORT || 3000;
 
 const { product } = require('./models')
 
@@ -39,6 +41,6 @@ app.delete('/products/:id', async (req, res) => {
     res.json('Deleted')
 })
 
-app.listen(8999, () => {
-    console.log(`O servidor está rodando na porta 3000`)
+app.listen(PORT, () => {
+    console.log(`O servidor está rodando na porta ${PORT}`)
 })
